@@ -4,7 +4,7 @@ const NodeCache = require("node-cache");
 const app = express();
 
 // In-memory database - Cache in memory (Save in RAM)
-const cache = new NodeCache();
+const cache = new NodeCache({ stdTTL: 60, checkperiod: 120 });
 
 // get value from body json
 app.use(express.json());
